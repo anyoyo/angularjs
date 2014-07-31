@@ -4,7 +4,62 @@
 		<meta charset="utf-8" />
 		<title>Hello anyong</title>
 	</head>
-	<body>
+	<body ng-app> 
+		<!--ng-app属性将用来告诉Angular页面中的哪一部分需要接受它的管理-->
+		
+		<div ng-controller="HelloController">
+            <p>{{greeting.text}},Word</p><br />
+            <!--通过{{}}进行数据绑定让我们可以把变量的值插入到页面的一部分中，同时能保证它会自动同步-->
+            
+        </div>
+        <h1 ng-controller="TextController">{{someText}}</h1>
+        <h2 ng-controller="TextControllen">{{messages.someText}}</h2>
+        
+        
+        <div ng-controller="StartUpController">
+	        <form>
+	            Starting:<input ng-change="computeNeed()" ng-model="funding.startingEstimate">
+	            <!--使用ng-change属性来指定一个控制器方法，一旦用户修改了输入值，这个方法就会被调用-->
+	            <!--ng-model  ng-model属性把元素绑定到模型属性上   -->
+	            Recommendation:{{needed}}元
+	        </form>
+        </div>
+        
+        <!--使用{{}}时第一个加载的页面，未被渲染好的模板会被用户看到，而ng-bind就不会出现这种问题。建议大家在index页面使用ng-bind。-->
+        
+		<script src="js/angular.min.js"></script>
+		<script type="text/javascript">
+		
+			function HelloController($scope) {   //可以向服务器发起一次请求，获取响应，然后把$scope.greeting.text设置为服务器端返回的内容。
+				$scope.greeting={text:"Hello"};
+			}
+
+			function TextController($scope){
+   			     $scope.someText="You have started your journey.";
+    	    }
+			
+			var messages = {};
+			messages.someText = "heihei";
+			function TextControllen($scope) {
+				$scope.messages = messages;
+			}
+			
+			function StartUpController($scope){
+				
+            	$scope.funding={startingEstimate:0};
+            	
+	           		var computeNeed=function(){
+	               		$scope.needed=$scope.funding.startingEstimate*10;
+	  		        }
+	           		
+           		$scope.$watch("funding.startingEstimate",computeNeed)
+           		/*$scope中的$watch()函数。我们可以通过它监视一个表达式，当这个表达式发生改变时就调用回调函数。*/
+ 	        }
+			
+			
+		</script>
+		
+		
 		
 	</body>
 </html>
