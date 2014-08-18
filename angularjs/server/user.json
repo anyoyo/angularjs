@@ -1,9 +1,9 @@
 [
 
-	{"username":"anyong","gender":"男","email":"anyong_0@163.com"},
-	{"username":"anyong","gender":"男","email":"anyong_0@163.com"},
-	{"username":"anyong","gender":"男","email":"anyong_0@163.com"},
-	{"username":"anyong","gender":"男","email":"anyong_0@163.com"},
-	{"username":"anyong","gender":"男","email":"anyong_0@163.com"}
+	{"id":"1","username":"anyong","gender":"战士","email":"anyong_0@163.com"},
+	{"id":"2","username":"zhaoyo","gender":"法师","email":"anyong_0@163.com"},
+	{"id":"3","username":"chenyu","gender":"术士","email":"anyong_0@163.com"},
+	{"id":"4","username":"lixian","gender":"剑士","email":"anyong_0@163.com"},
+	{"id":"5","username":"shishi","gender":"法师","email":"anyong_0@163.com"}
 
 ]

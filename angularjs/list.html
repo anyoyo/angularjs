@@ -1,16 +1,24 @@
-<table border="1">
-		
-	<tr>
-		<td>用户名</td>
-		<td>男</td>
-		<td>邮箱</td>
-		<td>操作</td>
-	</tr>		
-	<tr ng-repeat="user in users">
-		<td>{{user.username}}</td>
-		<td>{{user.gender}}</td>
-		<td>{{user.email}}</td>
-		<td>修改 删除</td>
-	</tr>
+
+	<meta charset="UTF-8">
+	<style>a{color: #f00;;}</style>
 	
-</table>
+	<table border="1">
+			
+		<tr>
+			<td>用户名</td>
+			<td>职业</td>
+			<td>邮箱</td>
+			<td>操作</td>
+		</tr>		
+		<tr ng-repeat="user in users"> <!-- for(var i in obj) -->
+			<td>{{user.username}}</td>
+			<td>{{user.gender}}</td>
+			<td>{{user.email}}</td>
+			<td>
+				<a href="#/update/{{user.id}}">修改</a>
+				<a href="" ng-click="del()" id="dell">删除</a>
+			</td>
+		</tr>
+		
+	</table>
+    
